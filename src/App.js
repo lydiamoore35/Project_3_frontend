@@ -7,7 +7,7 @@ import Form from "./Form";
 function App() {
   return (
     <div className="App">
-      <h1>DOG LISTING SITE</h1>
+      <h1>project 3</h1>
       <hr />
       <main>
         <Switch>
@@ -16,14 +16,14 @@ function App() {
             exact
             path="/create"
             render={(rp) => (
-              <Form {...rp} label="create" dog={{}} handleSubmit={() => {}} />
+              <Form {...rp} label="create" x={{}} handleSubmit={() => {}} />
             )}
           />
           <Route
             exact
             path="/edit"
             render={(rp) => (
-              <Form {...rp} label="update" dog={{}} handleSubmit={() => {}} />
+              <Form {...rp} label="update" x={{}} handleSubmit={() => {}} />
             )}
           />
         </Switch>
