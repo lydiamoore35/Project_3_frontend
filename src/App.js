@@ -7,8 +7,6 @@ import Form from "./Form";
 function App() {
   return (
     <div className="App">
-      <h1>project 3</h1>
-      <hr />
       <main>
         <Switch>
           <Route exact path="/" render={(rp) => <Display {...rp} />} />
