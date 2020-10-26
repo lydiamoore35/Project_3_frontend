@@ -16,14 +16,14 @@ function App() {
             exact
             path="/create"
             render={(rp) => (
-              <Form {...rp} label="create" x={{}} handleSubmit={() => {}} />
+              <Form {...rp} label="create" variableName={{}} handleSubmit={() => {}} />
             )}
           />
           <Route
             exact
             path="/edit"
             render={(rp) => (
-              <Form {...rp} label="update" x={{}} handleSubmit={() => {}} />
+              <Form {...rp} label="update" variableName={{}} handleSubmit={() => {}} />
             )}
           />
         </Switch>
