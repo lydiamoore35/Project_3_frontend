@@ -38,6 +38,13 @@ const Form = (props) => {
         value={formData.location}
         onChange={handleChange}
       />
+       <label>Zipcode:</label>
+      <input
+        type="number"
+        name="zipCode"
+        value={formData.zipCode}
+        onChange={handleChange}
+      />
       <label>Start Date:</label>
         <input
         type="date"
