@@ -1,6 +1,7 @@
 import React from "react";
 
 const Display = (props) => {
+
   return (
     <>
     <header className="nav-bar">
@@ -25,6 +26,6 @@ const Display = (props) => {
     </>
 ) 
  
-};
 
+};
 export default Display;
