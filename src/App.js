@@ -47,28 +47,29 @@ const handleCreate = (newEvent) => {
 
   return (
     <div className="App">
-      <h1>project 3</h1>
-      <hr />
-      <Link to="/create"><button>Add Event</button></Link>
+    
 
+      {/* <Link to="/create"><button>Add Event</button></Link> */}
       <main>
         <Switch>
           <Route exact path="/" render={(rp) => <Display {...rp} outreach={outreach} />} />
-          <Route
+          {/* <Route
             exact
             path="/create"
             render={(rp) => (
+
               <Form {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
             )}
-          />
-          <Route
+          /> */}
+          {/* <Route
             exact
             path="/edit"
             render={(rp) => (
+
               <Form {...rp} label="update" u={{}} handleSubmit={() => {}} />
+
             )}
           />
-
             {/* BC: I need to make my auth display pages and put them in this Switch. Testing routes below */}
 
             {/* <Route exact path="/auth/signup" render={(rp) => ({<authForm {...rp} label="signup" handleSubmit={() => {}})}} */}
