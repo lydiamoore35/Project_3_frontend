@@ -1,8 +1,6 @@
-//BC: This event form will only be shown when the user is signed in 
-
 import React from "react";
 
-const Form = (props) => {
+const authEventForm = (props) => {
   //STATE FOR THE FORM
   const [formData, setFormData] = React.useState(props.outreach);
 
@@ -59,4 +57,4 @@ const Form = (props) => {
   );
 };
 
-export default Form;
+export default authEventForm;
