@@ -21,7 +21,7 @@ function App() {
             exact
             path="/edit"
             render={(rp) => (
-              <Form {...rp} label="update" x={{}} handleSubmit={() => {}} />
+              <Form {...rp} label="update" y={{}} handleSubmit={() => {}} />
             )}
           />
         </Switch>
