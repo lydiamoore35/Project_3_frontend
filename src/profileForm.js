@@ -1,8 +1,8 @@
 import React from "react";
 
-const Form = (props) => {
+const profileForm = (props) => {
   //STATE FOR THE FORM
-  const [formData, setFormData] = React.useState(props.outreach);
+  const [formData, setFormData] = React.useState(props.profile);
 
   //FUNCTIONS
   const handleSubmit = (event) => {
@@ -17,44 +17,27 @@ const Form = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Event title:</label>
       <input
         type="text"
-        name="title"
-        value={formData.title}
+        name="username"
+        value= "Create Username"
         onChange={handleChange}
       />
-      <label>Cause:</label>
+      <input
+        type="Number"
+        name="zipCode"
+        value= "Enter your zipcode"
+        onChange={handleChange}
+      />
       <input
         type="text"
-        name="cause"
-        value={formData.cause}
+        name="password"
+        value="Create Password"
         onChange={handleChange}
       />
-      <label>Location:</label>
-      <input
-        type="text"
-        name="location"
-        value={formData.location}
-        onChange={handleChange}
-      />
-      <label>Start Date:</label>
-        <input
-        type="date"
-        name="startDate"
-        value={formData.startDate}
-        onChange={handleChange}
-      />
-      <label>End Date:</label>
-        <input
-        type="date"
-        name="endDate"
-        value={formData.endDate}
-        onChange={handleChange}
-     />
       <input type="submit" value={props.label} />
     </form>
   );
 };
 
-export default Form;
+export default profileForm;
