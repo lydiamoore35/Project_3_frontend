@@ -50,6 +50,7 @@ const handleCreate = (newEvent) => {
       <h1>project 3</h1>
       <hr />
       <Link to="/create"><button>Add Event</button></Link>
+
       <main>
         <Switch>
           <Route exact path="/" render={(rp) => <Display {...rp} outreach={outreach} />} />
@@ -64,7 +65,7 @@ const handleCreate = (newEvent) => {
             exact
             path="/edit"
             render={(rp) => (
-              <Form {...rp} label="update" x={{}} handleSubmit={() => {}} />
+              <Form {...rp} label="update" u={{}} handleSubmit={() => {}} />
             )}
           />
         </Switch>
