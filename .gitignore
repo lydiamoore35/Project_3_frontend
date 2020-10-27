@@ -1,2 +1,6 @@
 .env
 **/node_modules
+env.yaml
+.env
+development.yaml
+production.yamlccd
