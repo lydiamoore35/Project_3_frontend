@@ -5,10 +5,10 @@ import Home from "./Home";
 import Form from "./Form";
 function App() {
   // Variable to hold url
-  const url = "http://localhost:4500";
+  const url = "http://localhost:4500/outreach";
   //State to Hold events
   const [outreach, setOutreach] = React.useState([]);
-  //Empty Dog
+  //Empty events
   const emptyOutreach = {
     title: "",
     casue: "",
@@ -17,9 +17,12 @@ function App() {
     endDate: ""
   };
 
+  // slected event state
   const [selectedOutreach, setSelectedOutreach] = React.useState(emptyOutreach)
+
+  // function to get events via API
   const getOutreach = () => {
-    fetch(url + "/outreach/")
+    fetch(url + "/")
       .then((response) => response.json())
       .then((data) => {
         setOutreach(data);
@@ -30,8 +33,9 @@ React.useEffect(() => {
   getOutreach();
 }, []);
 
+//function to create new Event
 const handleCreate = (newEvent) => {
-  fetch(url + "/outreach/", {
+  fetch(url + "/", {
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -45,7 +49,7 @@ const handleCreate = (newEvent) => {
 
 //Edit route
 const handleUpdate = (editEvent) => {
-  fetch(url + "/outreach/" + editEvent._id, {
+  fetch(url + "/" + editEvent._id, {
     method: "put",
     headers: {
       "Content-Type": "application/json",
@@ -55,6 +59,7 @@ const handleUpdate = (editEvent) => {
     getOutreach();
   });
 };
+
 const selectOutreach = (event) => {
   setSelectedOutreach(event);
 };
@@ -62,7 +67,7 @@ const selectOutreach = (event) => {
 //delete
 
 const deleteOutreach = (event) => {
-  fetch(url + "/outreach/" + event._id, {
+  fetch(url + "/" + event._id, {
     method: "delete",
     headers: {
       "Content-Type": "application/json",
@@ -82,17 +87,16 @@ const deleteOutreach = (event) => {
                exact 
                path="/" 
 
-             render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}/>
+               render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}/>
                
-  
-          {/* <Route
-            exact
-            path="/create"
-            render={(rp) => (
+        <Route
+        exact
+        path="/create"
+        render={(rp) => (
 
-              <Form {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
-            )}
-          /> */}
+         <Form {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
+        )}
+          />
           {/* <Route
             exact
             path="/edit"
