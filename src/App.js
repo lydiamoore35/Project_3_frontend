@@ -13,7 +13,7 @@ function App() {
 
   const [outreach, setOutreach] = React.useState([]);
   // Variable to hold url
-  const url = "http://localhost:4500/outreach";
+  const url = "http://localhost:4500";
   //State to Hold events
   //Empty events
   const emptyOutreach = {
