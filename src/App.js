@@ -81,15 +81,18 @@ const deleteOutreach = (event) => {
           <Route 
                exact 
                path="/" 
-               render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}
-        // <Route
-        //     exact
-        //     path="/create"
-        //     render={(rp) => (
 
-        //       <Form {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
-        //     )}
-          />
+             render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}/>
+               
+  
+          {/* <Route
+            exact
+            path="/create"
+            render={(rp) => (
+
+              <Form {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
+            )}
+          /> */}
           {/* <Route
             exact
             path="/edit"
