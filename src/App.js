@@ -75,26 +75,25 @@ const deleteOutreach = (event) => {
   return (
     <div className="App">
     
-      {/* <Link to="/create"><button>Add Event</button></Link> */}
+      <Link to="/create"><button>Add Event</button></Link>
       <main>
         <Switch>
-          <Route exact path="/" render={(rp) => <Display {...rp} outreach={outreach} />} />
-          <Route
+          <Route exact path="/" render={(rp) => <Home {...rp} outreach={outreach} />} />
 
-          {/* <Route 
+          <Route
                exact 
                path="/" 
-               render={(rp) => <Display {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}
-          {/* <Route
+               render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>} />
 
+          <Route
             exact
             path="/create"
             render={(rp) => (
 
               <Form {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
-            )}*/}
-          /> 
-          {/* <Route
+            )}
+            /> 
+          <Route
             exact
             path="/edit"
             render={(rp) => (
@@ -106,15 +105,15 @@ const deleteOutreach = (event) => {
 
 
 
-            {/* BC: I need to make my auth display pages and put them in this Switch. Testing routes below */}
+            {/* BC: I need to make my auth Home pages and put them in this Switch. Testing routes below */}
 
             {/* BC: <Route exact path="/auth/signup" render={(rp) => ({<authForm {...rp} label="signup" handleSubmit={() => {}})}} */}
 
              {/* BC:  <Route exact path="/auth/login" render={(rp) => ({<authForm {...rp} label="login" handleSubmit={() => {}})}} */}
 
-              {/* BC:  <Route exact path="/auth/userHomePage" render={(rp) => ({<userHomePage {...rp} label="userHomePage" handleSubmit={() => {}})}} */}
+            {/* BC:  <Route exact path="/auth/userHomePage" render={(rp) => ({<userHomePage {...rp} label="userHomePage" handleSubmit={() => {}})}} */}
 
-             {/* BC:  <Route exact path="/auth/eventForm" render={(rp) => ({<authEventForm {...rp} label="eventForm" handleSubmit={() => {}})}} */}
+            {/* BC:  <Route exact path="/auth/eventForm" render={(rp) => ({<authEventForm {...rp} label="eventForm" handleSubmit={() => {}})}}  */}
         </Switch>
       </main>
     </div>

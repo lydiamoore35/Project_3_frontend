@@ -1,3 +1,5 @@
+//BC: This route doesn't need auth and should be moved out of auth folder
+
 //BC: NEW USER, NEEDS AN ACCOUNT
 //http://localhost:3000/signup
 
