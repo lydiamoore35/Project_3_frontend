@@ -103,10 +103,6 @@ const deleteOutreach = (event) => {
             )}/>
 
             <Route
-
-      <main>
-        <Switch>
-          <Route 
                exact 
                path="/" 
 
@@ -120,7 +116,7 @@ const deleteOutreach = (event) => {
          <Form {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
         )}
           />
-          {/* <Route
+           <Route
 
             exact
             path='/login'
