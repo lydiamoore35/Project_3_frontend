@@ -43,12 +43,9 @@ const handleCreate = (newEvent) => {
   });
 };
 
-
-
   return (
     <div className="App">
     
-
       {/* <Link to="/create"><button>Add Event</button></Link> */}
       <main>
         <Switch>
@@ -74,6 +71,6 @@ const handleCreate = (newEvent) => {
       </main>
     </div>
   );
-}
+        }
 
 export default App;
