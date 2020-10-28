@@ -2,10 +2,12 @@ import React from "react";
 import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
-import Form from "./Form";
+import AuthForm from "./auth/authEventForm";
+import UserHomePage from "./auth/userHomePage"
+
 function App() {
   // Variable to hold url
-  const url = "http://localhost:4500/outreach";
+  const url = "http://localhost:4500";
   //State to Hold events
   const [outreach, setOutreach] = React.useState([]);
   //Empty events
@@ -94,9 +96,18 @@ const deleteOutreach = (event) => {
         path="/create"
         render={(rp) => (
 
-         <Form {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
+         <AuthForm {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
         )}
           />
+
+      <Route
+        exact
+        path="/userHomepage"
+        render={(rp) =>
+         <UserHomePage {...rp}  outreach={outreach} handleSubmit={handleCreate} />
+        }
+          />  
+
           {/* <Route
             exact
             path="/edit"
