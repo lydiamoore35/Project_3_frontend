@@ -1,4 +1,3 @@
-//BC: NEW USER, NEEDS AN ACCOUNT
 //http://localhost:3000/signup
 
 
@@ -7,7 +6,7 @@ import React from "react";
 //I think Signup needs to be capitalized otherwise it won't compile
 const Signup = (props) => {
   //STATE FOR THE FORM
-  const [formData, setFormData] = React.useState(props.profile);
+  const [formData, setFormData] = React.useState(props);
 
   //FUNCTIONS
   const handleSubmit = (event) => {
@@ -20,6 +19,24 @@ const Signup = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
+
+
+                      //TESTING
+/////////////////////////////////////////////////////////////////////
+const [user, setUser] = React.useState([]);
+//Empty User
+const emptyUser = {
+  username: "",
+  password: "",
+  zipCode: 0
+};
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -29,9 +46,9 @@ const Signup = (props) => {
         onChange={handleChange}
       />
       <input
-        type="Number"
+        type="number"
         name="zipCode"
-        value= "Enter your zipcode"
+        value= "Enter your zipCode"
         onChange={handleChange}
       />
       <input
