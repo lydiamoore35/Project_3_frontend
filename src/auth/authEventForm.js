@@ -53,6 +53,9 @@ const authEventForm = (props) => {
         onChange={handleChange}
      />
       <input type="submit" value={props.label} />
+      <footer>
+      Copyright © 2020 created by Brandon Czaja, Leanne Frisinger, Lydia Moore and Oscar Icochea Calenzani.<br></br>All rights reserved.
+    </footer>
     </form>
   );
 };
