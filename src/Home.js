@@ -1,7 +1,5 @@
 import React from "react";
-
-const Display = (props) => {
-
+const Home = (props) => {
   return (
     <>
     <header className="navbar">
@@ -21,6 +19,10 @@ const Display = (props) => {
       <h5 className="subheading">I AM BECAUSE WE ARE</h5>
       <p className="about">
       Ubuntu is a digital platform for searching local volunteer opportunities. <br></br>Explore different projects that need your help. Sign up and start logging your favorite community projects and add your own for others to view!</p>
+      <div className="home-buttons"> <a href="">
+      <button className="signUp">Sign Up</button></a>
+      <a href="">
+      <button className="logIn">Log In</button></a></div>
       </div>
       <img className="responsive" src="https://dionisopunk.files.wordpress.com/2018/11/the-circle-game-o.jpg?w=580&h=580&crop=1"></img>
     </div>
@@ -31,7 +33,5 @@ const Display = (props) => {
     </footer>
     </>
 ) 
- 
-
 };
-export default Display;
+export default Home;
