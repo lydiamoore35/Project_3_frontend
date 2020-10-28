@@ -78,10 +78,12 @@ const deleteOutreach = (event) => {
       {/* <Link to="/create"><button>Add Event</button></Link> */}
       <main>
         <Switch>
-          {/* <Route 
+          <Route 
                exact 
                path="/" 
-               render={(rp) => <Display {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}
+             render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}/>
+               
+  
           {/* <Route
             exact
             path="/create"
