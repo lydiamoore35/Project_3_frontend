@@ -2,12 +2,19 @@ import React from "react";
 import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
-import Form from "./Form";
+import UserEventForm from "./auth/userEventForm";
+import Form from "./Form"
+import Login from "./userLogin";
+import Signup from "./userSignup";
+import UserHomePage from "../src/auth/userHomePage"
+
+
 function App() {
+
+  const [outreach, setOutreach] = React.useState([]);
   // Variable to hold url
   const url = "http://localhost:4500/outreach";
   //State to Hold events
-  const [outreach, setOutreach] = React.useState([]);
   //Empty events
   const emptyOutreach = {
     title: "",
@@ -64,8 +71,7 @@ const selectOutreach = (event) => {
   setSelectedOutreach(event);
 };
 
-//delete
-
+//Delete
 const deleteOutreach = (event) => {
   fetch(url + "/" + event._id, {
     method: "delete",
@@ -77,10 +83,27 @@ const deleteOutreach = (event) => {
   });
 };
 
+
+
+
   return (
     <div className="App">
     
       <Link to="/create"><button>Add Event</button></Link>
+      <Link to="/signup"><button>Signup</button></Link>
+      <Link to="/login"><button>Login</button></Link>
+      <main>
+        <Switch>
+
+          <Route
+            exact
+            path='/signup'
+            render={(rp) => (
+              <Signup {...rp} label="signup"/>
+            )}/>
+
+            <Route
+
       <main>
         <Switch>
           <Route 
@@ -98,30 +121,33 @@ const deleteOutreach = (event) => {
         )}
           />
           {/* <Route
+
             exact
-            path="/edit"
+            path='/login'
             render={(rp) => (
-              <Form {...rp} label="update" outreach={{selectedOutreach}} handleSubmit={handleUpdate} />
-
-            )}
-          />
+              <Login {...rp} label="login"  />
+            )}/>
 
 
+            <Route
+            exact
+            path='/auth/userHomepage'
+            render={(rp) => (
+              <UserHomePage {...rp} label="userHomepage" />
+            )}/>
 
+            <Route
+              exact
+              path="/auth/eventForm"
+              render={(rp) => (
+                <UserEventForm {...rp} label="userEventForm" />
+              )} />
 
-            {/* BC: I need to make my auth display pages and put them in this Switch. Testing routes below 
-
-            {/* <Route exact path="/auth/signup" render={(rp) => ({<authForm {...rp} label="signup" handleSubmit={() => {}})}} */}
-
-             {/* <Route exact path="/auth/login" render={(rp) => ({<authForm {...rp} label="login" handleSubmit={() => {}})}} */}
-
-              {/* <Route exact path="/auth/userHomePage" render={(rp) => ({<userHomePage {...rp} label="userHomePage" handleSubmit={() => {}})}} */}
-
-             {/* <Route exact path="/auth/eventForm" render={(rp) => ({<authEventForm {...rp} label="eventForm" handleSubmit={() => {}})}} */}
         </Switch>
       </main>
     </div>
   );
-        }
+}
+ export default App;
 
-export default App;
+
