@@ -1,4 +1,6 @@
-//BC: I think I can do both sign up and log in in the same form if I switch the label name
+//BC: NEW USER, NEEDS AN ACCOUNT
+//http://localhost:3000/signup
+
 
 import React from "react";
 

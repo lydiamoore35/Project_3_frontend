@@ -1,3 +1,6 @@
+//BC: USER IS LOGGED IN, CRUD EVENTS
+//Example URL: http://localhost:3000/auth/userEventForm
+
 import React from "react";
 
 const authEventForm = (props) => {

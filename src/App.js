@@ -53,14 +53,14 @@ const handleCreate = (newEvent) => {
       <main>
         <Switch>
           <Route exact path="/" render={(rp) => <Display {...rp} outreach={outreach} />} />
-          {/* <Route
+          <Route
             exact
             path="/create"
             render={(rp) => (
 
               <Form {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
             )}
-          /> */}
+          /> 
           {/* <Route
             exact
             path="/edit"
@@ -72,13 +72,13 @@ const handleCreate = (newEvent) => {
           />
             {/* BC: I need to make my auth display pages and put them in this Switch. Testing routes below */}
 
-            {/* <Route exact path="/auth/signup" render={(rp) => ({<authForm {...rp} label="signup" handleSubmit={() => {}})}} */}
+            {/* BC: <Route exact path="/auth/signup" render={(rp) => ({<authForm {...rp} label="signup" handleSubmit={() => {}})}} */}
 
-             {/* <Route exact path="/auth/login" render={(rp) => ({<authForm {...rp} label="login" handleSubmit={() => {}})}} */}
+             {/* BC:  <Route exact path="/auth/login" render={(rp) => ({<authForm {...rp} label="login" handleSubmit={() => {}})}} */}
 
-              {/* <Route exact path="/auth/userHomePage" render={(rp) => ({<userHomePage {...rp} label="userHomePage" handleSubmit={() => {}})}} */}
+              {/* BC:  <Route exact path="/auth/userHomePage" render={(rp) => ({<userHomePage {...rp} label="userHomePage" handleSubmit={() => {}})}} */}
 
-             {/* <Route exact path="/auth/eventForm" render={(rp) => ({<authEventForm {...rp} label="eventForm" handleSubmit={() => {}})}} */}
+             {/* BC:  <Route exact path="/auth/eventForm" render={(rp) => ({<authEventForm {...rp} label="eventForm" handleSubmit={() => {}})}} */}
         </Switch>
       </main>
     </div>
