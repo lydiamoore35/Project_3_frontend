@@ -3,12 +3,17 @@ import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
 import Form from "./Form";
+import userLogin from "./userLogin";
+import userSignup from "./userSignup";
+import userHomePage from "../src/auth/userHomePage"
+
+
 function App() {
   // Variable to hold url
-  const url = "http://localhost:4500";
+  const url = "http://localhost:3000";
   //State to Hold events
   const [outreach, setOutreach] = React.useState([]);
-  //Empty Dog
+  //Empty Outreach Event
   const emptyOutreach = {
     title: "",
     casue: "",
@@ -59,8 +64,7 @@ const selectOutreach = (event) => {
   setSelectedOutreach(event);
 };
 
-//delete
-
+//Delete
 const deleteOutreach = (event) => {
   fetch(url + "/outreach/" + event._id, {
     method: "delete",
@@ -71,6 +75,9 @@ const deleteOutreach = (event) => {
     getOutreach();
   });
 };
+
+
+
 
   return (
     <div className="App">
@@ -89,31 +96,47 @@ const deleteOutreach = (event) => {
             exact
             path="/create"
             render={(rp) => (
-
               <Form {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
             )}
             /> 
+
           <Route
             exact
             path="/edit"
             render={(rp) => (
               <Form {...rp} label="update" outreach={{selectedOutreach}} handleSubmit={handleUpdate} />
-
             )}
           />
 
-
-
-
             {/* BC: I need to make my auth Home pages and put them in this Switch. Testing routes below */}
 
-            {/* BC: <Route exact path="/auth/signup" render={(rp) => ({<authForm {...rp} label="signup" handleSubmit={() => {}})}} */}
+          <Route
+            exact
+            path='/signup'
+            render={(rp) => (
+              <userSignup {...rp} label="signup"  />
+            )}/>
 
-             {/* BC:  <Route exact path="/auth/login" render={(rp) => ({<authForm {...rp} label="login" handleSubmit={() => {}})}} */}
+            <Route
+            exact
+            path='/login'
+            render={(rp) => (
+              <userLogin {...rp} label="login"  />
+            )}/>
 
-            {/* BC:  <Route exact path="/auth/userHomePage" render={(rp) => ({<userHomePage {...rp} label="userHomePage" handleSubmit={() => {}})}} */}
+            <Route
+            exact
+            path='/auth/userHomepage'
+            render={(rp) => (
+              <userHomePage {...rp} label="userHomepage" />
+            )}/>
 
-            {/* BC:  <Route exact path="/auth/eventForm" render={(rp) => ({<authEventForm {...rp} label="eventForm" handleSubmit={() => {}})}}  */}
+            <Route
+              exact
+              path="/auth/eventForm"
+              render={(rp) => (
+                <userEventForm {...rp} label="userEventForm" />
+              )} />
         </Switch>
       </main>
     </div>
