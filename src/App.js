@@ -75,12 +75,13 @@ const deleteOutreach = (event) => {
   return (
     <div className="App">
     
-      {/* <Link to="/create"><button>Add Event</button></Link> */}
+      <Link to="/create"><button>Add Event</button></Link>
       <main>
         <Switch>
           <Route 
                exact 
                path="/" 
+
              render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}/>
                
   
@@ -104,7 +105,7 @@ const deleteOutreach = (event) => {
 
 
 
-            {/* BC: I need to make my auth display pages and put them in this Switch. Testing routes below */}
+            {/* BC: I need to make my auth display pages and put them in this Switch. Testing routes below 
 
             {/* <Route exact path="/auth/signup" render={(rp) => ({<authForm {...rp} label="signup" handleSubmit={() => {}})}} */}
 
