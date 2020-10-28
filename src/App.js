@@ -11,7 +11,7 @@ function App() {
   //Empty events
   const emptyOutreach = {
     title: "",
-    casue: "",
+    cause: "",
     location: "",
     startDate:"",
     endDate: ""
