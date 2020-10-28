@@ -69,7 +69,16 @@ const handleCreate = (newEvent) => {
               <Form {...rp} label="update" u={{}} handleSubmit={() => {}} />
 
             )}
-          /> */}
+          />
+            {/* BC: I need to make my auth display pages and put them in this Switch. Testing routes below */}
+
+            {/* <Route exact path="/auth/signup" render={(rp) => ({<authForm {...rp} label="signup" handleSubmit={() => {}})}} */}
+
+             {/* <Route exact path="/auth/login" render={(rp) => ({<authForm {...rp} label="login" handleSubmit={() => {}})}} */}
+
+              {/* <Route exact path="/auth/userHomePage" render={(rp) => ({<userHomePage {...rp} label="userHomePage" handleSubmit={() => {}})}} */}
+
+             {/* <Route exact path="/auth/eventForm" render={(rp) => ({<authEventForm {...rp} label="eventForm" handleSubmit={() => {}})}} */}
         </Switch>
       </main>
     </div>

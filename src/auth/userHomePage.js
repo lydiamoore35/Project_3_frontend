@@ -1,0 +1,1 @@
+//BC: this will essentially be the same as the app homepage but only shows the user's events
