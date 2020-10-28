@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
-import Display from "./Display";
+import Home from "./Home";
 import Form from "./Form";
 function App() {
   // Variable to hold url
   const url = "http://localhost:4500";
-  //State to Hold Dogs
+  //State to Hold events
   const [outreach, setOutreach] = React.useState([]);
   //Empty Dog
   const emptyOutreach = {
@@ -43,16 +43,13 @@ const handleCreate = (newEvent) => {
   });
 };
 
-
-
   return (
     <div className="App">
     
-
       {/* <Link to="/create"><button>Add Event</button></Link> */}
       <main>
         <Switch>
-          <Route exact path="/" render={(rp) => <Display {...rp} outreach={outreach} />} />
+          <Route exact path="/" render={(rp) => <Home {...rp} outreach={outreach} />} />
           {/* <Route
             exact
             path="/create"
@@ -83,6 +80,6 @@ const handleCreate = (newEvent) => {
       </main>
     </div>
   );
-}
+        }
 
 export default App;
