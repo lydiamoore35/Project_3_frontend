@@ -10,11 +10,12 @@ import UserHomePage from "../src/auth/userHomePage"
 
 
 function App() {
-  // Variable to hold url /////BC: Master file has 4500
-  const url = "http://localhost:3000";
-  //State to Hold events
+
   const [outreach, setOutreach] = React.useState([]);
-  //Empty Outreach Event
+  // Variable to hold url
+  const url = "http://localhost:4500/outreach";
+  //State to Hold events
+  //Empty events
   const emptyOutreach = {
     title: "",
     cause: "",
@@ -23,9 +24,12 @@ function App() {
     endDate: ""
   };
 
+  // slected event state
   const [selectedOutreach, setSelectedOutreach] = React.useState(emptyOutreach)
+
+  // function to get events via API
   const getOutreach = () => {
-    fetch(url + "/outreach/")
+    fetch(url + "/")
       .then((response) => response.json())
       .then((data) => {
         setOutreach(data);
@@ -36,8 +40,9 @@ React.useEffect(() => {
   getOutreach();
 }, []);
 
+//function to create new Event
 const handleCreate = (newEvent) => {
-  fetch(url + "/outreach/", {
+  fetch(url + "/", {
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -51,7 +56,7 @@ const handleCreate = (newEvent) => {
 
 //Edit route
 const handleUpdate = (editEvent) => {
-  fetch(url + "/outreach/" + editEvent._id, {
+  fetch(url + "/" + editEvent._id, {
     method: "put",
     headers: {
       "Content-Type": "application/json",
@@ -61,13 +66,14 @@ const handleUpdate = (editEvent) => {
     getOutreach();
   });
 };
+
 const selectOutreach = (event) => {
   setSelectedOutreach(event);
 };
 
 //Delete
 const deleteOutreach = (event) => {
-  fetch(url + "/outreach/" + event._id, {
+  fetch(url + "/" + event._id, {
     method: "delete",
     headers: {
       "Content-Type": "application/json",
@@ -88,10 +94,6 @@ const deleteOutreach = (event) => {
       <Link to="/login"><button>Login</button></Link>
       <main>
         <Switch>
-          <Route 
-            exact 
-            path="/" 
-            render={(rp) => <Home {...rp} outreach={outreach} selectOutreach={selectOutreach} deleteOutreach={deleteOutreach} />} />
 
           <Route
             exact
@@ -101,11 +103,31 @@ const deleteOutreach = (event) => {
             )}/>
 
             <Route
+
+      <main>
+        <Switch>
+          <Route 
+               exact 
+               path="/" 
+
+               render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}/>
+               
+        <Route
+        exact
+        path="/create"
+        render={(rp) => (
+
+         <Form {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
+        )}
+          />
+          {/* <Route
+
             exact
             path='/login'
             render={(rp) => (
               <Login {...rp} label="login"  />
             )}/>
+
 
             <Route
             exact
@@ -120,6 +142,7 @@ const deleteOutreach = (event) => {
               render={(rp) => (
                 <UserEventForm {...rp} label="userEventForm" />
               )} />
+
         </Switch>
       </main>
     </div>
