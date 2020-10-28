@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
-import Display from "./Display";
+import Home from "./Home";
 import Form from "./Form";
 function App() {
   // Variable to hold url
@@ -52,7 +52,7 @@ const handleCreate = (newEvent) => {
       {/* <Link to="/create"><button>Add Event</button></Link> */}
       <main>
         <Switch>
-          <Route exact path="/" render={(rp) => <Display {...rp} outreach={outreach} />} />
+          <Route exact path="/" render={(rp) => <Home {...rp} outreach={outreach} />} />
           {/* <Route
             exact
             path="/create"

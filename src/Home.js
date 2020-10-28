@@ -1,6 +1,6 @@
 import React from "react";
 
-const Display = (props) => {
+const Home = (props) => {
 
   return (
     <>
@@ -23,6 +23,15 @@ const Display = (props) => {
       <img className="responsive" src="https://dionisopunk.files.wordpress.com/2018/11/the-circle-game-o.jpg?w=580&h=580&crop=1"></img>
     </div>
     <body>
+    {/* <Form title="SIGNUP">
+        <div className="signupField">
+          <form action="/auth/signup" method="post">
+            <input type="text" name="username" placeholder="username" />
+            <input type="password" name="password" placeholder="password" />
+            <input type="submit" value="signup" />
+          </form>
+        </div>
+      </Form> */}
     </body>
     <footer>
       Copyright © 2020 created by Brandon Czaja, Leanne Frisinger, Lydia Moore and Oscar Icochea Calenzani.<br></br>All rights reserved.
@@ -32,4 +41,4 @@ const Display = (props) => {
  
 
 };
-export default Display;
+export default Home;
