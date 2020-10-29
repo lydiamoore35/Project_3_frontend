@@ -15,18 +15,18 @@ import React from "react";
 
 const UserHomePage = (props) => {
 
-  const {events} = props
+  const {outreach} = props
 
   const loaded = () => (
     <div style={{textAlign: "center"}}>
-      {events.map((event) => (
+      {outreach.map((event) => (
         <article>
-          <h1>{event.title}</h1>
-          <h2>{event.cause}</h2>
-          <h2>{event.location}</h2>
-          <h2>{event.zipCode}</h2>
-          <h2>{event.startDate}</h2>
-          <h2>{event.endDate}</h2>
+          <h1>Title: {event.title}</h1>
+          <h2>Cause: {event.cause}</h2>
+          <h2>Location: {event.location}</h2>
+          <h2>Zip Code: {event.zipCode}</h2>
+          <h2>Start Date: {event.startDate}</h2>
+          <h2>End Date: {event.endDate}</h2>
           <button onClick={() => {
             props.selectEvent(event)
             props.history.push('/edit')
@@ -39,7 +39,7 @@ const UserHomePage = (props) => {
 
   const loading = <h1>Loading...</h1>
 
-  return events.length > 0 ? loaded() : loading
+  return outreach.length > 0 ? loaded() : loading
 };
 
 export default UserHomePage;
