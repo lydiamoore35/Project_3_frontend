@@ -127,3 +127,21 @@ span a:hover {
   max-width: 100%;
   height: auto;
 }
+/* LM css for buttons */
+.home-buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 5%;
+}
+.logIn, .signUp {
+  height: 50px;
+  margin-top: 30%;
+  background-color: white;
+  border: none;
+  color: black;
+  font-size: 13px;
+}
+.textbox{
+  margin-top: 2.5%;
+}
