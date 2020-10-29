@@ -89,9 +89,9 @@ const deleteOutreach = (event) => {
   return (
     <div className="App">
     
-      <Link to="/create"><button>Add Event</button></Link>
-      <Link to="/signup"><button>Signup</button></Link>
-      <Link to="/login"><button>Login</button></Link>
+      <Link to="/create"><button>Add Event</button></Link>&nbsp;
+      <Link to="/signup"><button>Signup</button></Link>&nbsp;
+      <Link to="/login"><button>Login</button></Link>&nbsp;
       <main>
         <Switch>
 
