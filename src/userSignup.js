@@ -1,10 +1,12 @@
-//BC: I think I can do both sign up and log in in the same form if I switch the label name
+//http://localhost:3000/signup
+
 
 import React from "react";
 
-const authForm = (props) => {
+//I think Signup needs to be capitalized otherwise it won't compile
+const Signup = (props) => {
   //STATE FOR THE FORM
-  const [formData, setFormData] = React.useState(props.outreach);
+  const [formData, setFormData] = React.useState(props);
 
   //FUNCTIONS
   const handleSubmit = (event) => {
@@ -17,20 +19,42 @@ const authForm = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
+
+
+                      //TESTING
+/////////////////////////////////////////////////////////////////////
+const [user, setUser] = React.useState([]);
+//Empty User
+const emptyUser = {
+  username: "",
+  password: "",
+  zipCode: 0
+};
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
   return (
     <form onSubmit={handleSubmit}>
-      <label>Username</label>
       <input
         type="text"
         name="username"
-        value={formData.username}
+        value= "Create Username"
         onChange={handleChange}
       />
-      <label>Password</label>
+      <input
+        type="number"
+        name="zipCode"
+        value= "Enter your zipCode"
+        onChange={handleChange}
+      />
       <input
         type="text"
         name="password"
-        value={formData.password}
+        value="Create Password"
         onChange={handleChange}
       />
       <input type="submit" value={props.label} />
@@ -38,4 +62,4 @@ const authForm = (props) => {
   );
 };
 
-export default authForm;
+export default Signup;
