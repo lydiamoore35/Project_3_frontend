@@ -145,18 +145,12 @@ const deleteOutreach = (event) => {
           />
             <Route
             exact
-            path='/auth/userHomepage'
+            path='/userHomepage'
             render={(rp) => (
-              <UserHomePage {...rp} label="userHomepage" />
+              <UserHomePage {...rp} outreach={outreach} handleSubmit={handleCreate} />
             )}/>
 
-            {/* <Route
-              exact
-              path="/auth/eventForm"
-              render={(rp) => (
-                <UserEventForm {...rp} label="userEventForm" />
-              )} /> */}
-
+            
         </Switch>
       </main>
     </div>

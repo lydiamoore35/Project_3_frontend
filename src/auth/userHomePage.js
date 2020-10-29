@@ -4,8 +4,9 @@
 import { Route, Link, Switch } from "react-router-dom";
 import React from "react";
 const UserHomePage = (props) => {
-  const {outreach} = props
-  console.log(`Your Props: ${props.handleSubmit}`)
+    const {outreach} = props
+
+
   const loaded = () => (
     <div style={{textAlign: "center"}}>
       {outreach.map((event) => (
@@ -27,6 +28,7 @@ const UserHomePage = (props) => {
   )
 
   const loading = <h1>Loading...</h1>
+
   return outreach.length > 0 ? loaded() : loading
 };
 export default UserHomePage;
