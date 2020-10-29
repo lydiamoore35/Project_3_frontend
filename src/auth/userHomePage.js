@@ -3,8 +3,17 @@
 // import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import React from "react";
+import App from "../App";
+
 const UserHomePage = (props) => {
+  
     const {outreach} = props
+console.log(`Handle Create: ${props.handleCreate}`)
+console.log(`Handle Update: ${props.handleUpdate}`)
+console.log(`Delete Outreach: ${props.deleteOutreach}`)
+console.log(`Outreach: ${props.outreach}`)
+console.log(`Get Outreach (): ${props.getOutreach}`)
+
 
   const loaded = () => (
     <div style={{textAlign: "center"}}>
@@ -17,10 +26,10 @@ const UserHomePage = (props) => {
           <h2>Start Date: {event.startDate}</h2>
           <h2>End Date: {event.endDate}</h2>
           <button onClick={() => {
-            props.selectedOutreach(event)
+            props.selectOutreach(event)
             props.history.push('/edit')
           }}>Edit</button>
-          <button onClick={() => {props.deletedEvent(event)}}>Delete</button>
+          <button onClick={() => {props.deleteOutreach(event)}}>Delete</button>
         </article>
       ))}
     </div>

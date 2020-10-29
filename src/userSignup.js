@@ -20,23 +20,6 @@ const Signup = (props) => {
   };
 
 
-
-                      //TESTING
-/////////////////////////////////////////////////////////////////////
-const [user, setUser] = React.useState([]);
-//Empty User
-const emptyUser = {
-  username: "",
-  password: "",
-  zipCode: 0
-};
-
-/////////////////////////////////////////////////////////////////////
-
-
-
-
-
   return (
     <form onSubmit={handleSubmit}>
       <input
