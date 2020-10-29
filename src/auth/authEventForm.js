@@ -1,6 +1,6 @@
 import React from "react";
 
-const authEventForm = (props) => {
+const AuthEventForm = (props) => {
   //STATE FOR THE FORM
   const [formData, setFormData] = React.useState(props.outreach);
 
@@ -8,7 +8,7 @@ const authEventForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
-    props.history.push("/"); //Push back to display page
+    props.history.push("/userHomepage.js"); //Push back to display page
   };
 
   const handleChange = (event) => {
@@ -38,6 +38,13 @@ const authEventForm = (props) => {
         value={formData.location}
         onChange={handleChange}
       />
+       <label>Zipcode:</label>
+      <input
+        type="number"
+        name="zipCode"
+        value={formData.zipCode}
+        onChange={handleChange}
+      />
       <label>Start Date:</label>
         <input
         type="date"
@@ -60,4 +67,6 @@ const authEventForm = (props) => {
   );
 };
 
-export default authEventForm;
+
+export default AuthEventForm;
+
