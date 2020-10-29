@@ -38,7 +38,7 @@ const emptyUser = {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="newUser" onSubmit={handleSubmit}>
       <input
         type="text"
         name="username"
@@ -46,9 +46,9 @@ const emptyUser = {
         onChange={handleChange}
       />
       <input
-        type="number"
+        type="text"
         name="zipCode"
-        value= "Enter your zipCode"
+        value= "Enter your zip code"
         onChange={handleChange}
       />
       <input
