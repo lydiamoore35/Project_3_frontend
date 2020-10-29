@@ -1,8 +1,6 @@
-//BC: This event form will only be shown when the user is signed in 
-
 import React from "react";
 
-const Form = (props) => {
+const AuthEventForm = (props) => {
   //STATE FOR THE FORM
   const [formData, setFormData] = React.useState(props.outreach);
 
@@ -10,7 +8,7 @@ const Form = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
-    props.history.push("/"); //Push back to display page
+    props.history.push("/userHomepage"); //Push back to display page
   };
 
   const handleChange = (event) => {
@@ -62,8 +60,13 @@ const Form = (props) => {
         onChange={handleChange}
      />
       <input type="submit" value={props.label} />
+      <footer>
+      Copyright © 2020 created by Brandon Czaja, Leanne Frisinger, Lydia Moore and Oscar Icochea Calenzani.<br></br>All rights reserved.
+    </footer>
     </form>
   );
 };
 
-export default Form;
+
+export default AuthEventForm;
+

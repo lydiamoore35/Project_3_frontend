@@ -2,11 +2,9 @@ import React from "react";
 import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
-import UserEventForm from "./auth/userEventForm";
-import Form from "./Form"
-import Login from "./userLogin";
-import Signup from "./userSignup";
-import UserHomePage from "../src/auth/userHomePage"
+import AuthForm from "./auth/authEventForm";
+import UserHomePage from "./auth/userHomePage"
+import Signup from "./userSignup"
 
 
 function App() {
@@ -113,18 +111,28 @@ const deleteOutreach = (event) => {
         path="/create"
         render={(rp) => (
 
-         <Form {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
+         <AuthForm {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
         )}
           />
+
+      <Route
+        exact
+        path="/userHomepage"
+        render={(rp) =>
+         <UserHomePage {...rp}  outreach={outreach} handleSubmit={handleCreate} />
+        }
+          />  
+
            <Route
 
             exact
             path='/login'
             render={(rp) => (
-              <Login {...rp} label="login"  />
-            )}/>
 
+              <AuthForm {...rp} label="update" outreach={selectedOutreach} handleSubmit={handleUpdate} />
 
+            )}
+          />
             <Route
             exact
             path='/userHomepage'
@@ -132,13 +140,7 @@ const deleteOutreach = (event) => {
               <UserHomePage {...rp} outreach={outreach} handleSubmit={handleCreate} />
             )}/>
 
-            <Route
-              exact
-              path="/eventForm"
-              render={(rp) => (
-                <UserEventForm {...rp} label="userEventForm" />
-              )} />
-              
+            
         </Switch>
       </main>
     </div>
