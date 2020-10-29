@@ -8,13 +8,6 @@ import App from "../App";
 const UserHomePage = (props) => {
   
     const {outreach} = props
-console.log(`Handle Create: ${props.handleCreate}`)
-console.log(`Handle Update: ${props.handleUpdate}`)
-console.log(`Delete Outreach: ${props.deleteOutreach}`)
-console.log(`Outreach: ${props.outreach}`)
-console.log(`Get Outreach (): ${props.getOutreach}`)
-
-
 
   const loaded = () => (
     <div className="container">

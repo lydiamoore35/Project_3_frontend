@@ -1,44 +1,68 @@
-/////////////
-//LOGIN
-////////////
-
+//CURRENTLY LOGIN DOES NOT RECOGNIZE THE USER OR THE TOKEN, BUT IT DOES SEND TO THE CORRECT HOME PAGE
 import React from "react";
+import {GlobalContext} from "./App"
 
 const Login = (props) => {
-  console.log(`Props.Profile: ${props.profile}`)
-  console.log(`Props: ${props}`)
+
+  const {globalState, setGlobalState} = React.useContext(GlobalContext)
+  const {url} = globalState
 
 
-  //STATE FOR THE FORM
-  const [formData, setFormData] = React.useState(props.profile);
+  const blankForm = {
+    username: "",
+    password: "",
+  }
 
-  //FUNCTIONS
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent Form from Refreshing
-    props.handleSubmit(formData); // Submit to Parents desired function
-    props.history.push("/"); //Push back to display page
-  };
+  const [form, setForm] = React.useState(blankForm);
 
   const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+    setForm({ ...form, [event.target.name]: event.target.value });
   };
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const {username, password} = form
+    
+    //ERROR: Post lh:4500/auth/login 400 Not Found.Token undefined
+    fetch(`${url}/auth/login`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({username, password})
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      setGlobalState({...globalState, token: data.token})
+      console.log(`Token: ${data.token}`)
+      setForm(blankForm)
+      props.history.push("/userHomepage")
+    })
+  };
+
+
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
         name="username"
-        value= "Username"
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="password"
-        value="Password"
+        placeholder="Username"
+        value= {form.username}
         onChange={handleChange}
       />
 
-      <input type="submit" value={props.label} />
+      <input
+        type="text"
+        name="password"
+        placeholder="Password"
+        value= {form.password}
+        onChange={handleChange}
+      />  
+
+      <input type="submit" value="login" />
     </form>
   );
 };

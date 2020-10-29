@@ -12,9 +12,9 @@ export const GlobalContext = React.createContext(null)
 
 function App() {
 
-  //THIS GLOBAL CONTEXT IS COMING FROM ALEX VIDEO:
+  //BC: THIS GLOBAL CONTEXT IS COMING FROM ALEX VIDEO:
   //https://www.youtube.com/watch?v=Jzdm4kOrZ0c&list=PLY6oTPmKnKbZsBHeBGNL9suAPIJdLaVk9&index=8
-  const [globalState, setGlobalState] = React.useState({url: "http://localhost:4500"})
+  const [globalState, setGlobalState] = React.useState({url: "http://localhost:4500", token: null})
 
 
 
@@ -97,44 +97,6 @@ const deleteOutreach = (event) => {
   });
 };
 
-///////////
-//LOGIN
-//////////
-  //Create a variable for users and set the state
-  const [user, setUser] = React.useState([]);
-
-  //emptyUser will be the default value of the form
-  const emptyUser ={
-      username: "",
-      password: ""
-    }
-
-  //select a user and set the state of that user using the emptyUser default
-  const [selectedUser, setSelectedUser] = React.useState(emptyUser)
-
-  //Get user info from our API
-  const getUser = () => {
-    fetch(url + "/login")
-      .then((response) => response.json())
-      .then((data) => {
-        //Set the found data to user state
-        setUser(data);
-      });
-  };     
-
-  //
-  const handleUser = (existingUser) => {
-    fetch(url + "/login", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(existingUser),
-    }).then(response => {
-      getUser();
-    });
-  };
-
   return (
     <GlobalContext.Provider value={{globalState, setGlobalState}}>
       <div className="App">
@@ -157,9 +119,9 @@ const deleteOutreach = (event) => {
             {/* LOGIN */}
             <Route
               exact
-              path='/login'
+              path='/auth/login'
               render={(rp) => (
-                <Login {...rp} label="login" login={Login} handleSubmit={handleUpdate} />
+                <Login {...rp} />
               )}
             />
 
