@@ -16,7 +16,9 @@ const AuthEventForm = (props) => {
   };
 
   return (
+    
     <form onSubmit={handleSubmit}>
+      <div className="eventForm">
       <label>Event title:</label>
       <input
         type="text"
@@ -59,6 +61,7 @@ const AuthEventForm = (props) => {
         value={formData.endDate}
         onChange={handleChange}
      />
+     </div>
       <input type="submit" value={props.label} />
       <footer>
       Copyright © 2020 created by Brandon Czaja, Leanne Frisinger, Lydia Moore and Oscar Icochea Calenzani.<br></br>All rights reserved.

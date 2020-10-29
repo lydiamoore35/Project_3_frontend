@@ -9,9 +9,11 @@ import Signup from "./userSignup"
 
 function App() {
 
+  const url = "http://localhost:4500";
+
   const [outreach, setOutreach] = React.useState([]);
   // Variable to hold url
-  const url = "http://localhost:4500";
+  
   //State to Hold events
   //Empty events
   const emptyOutreach = {
@@ -96,9 +98,9 @@ const deleteOutreach = (event) => {
   return (
     <div className="App">
     
-      <Link to="/create"><button>Add Event</button></Link>
-      <Link to="/signup"><button>Signup</button></Link>
-      <Link to="/login"><button>Login</button></Link>
+      <Link to="/create"><button>Add Event</button></Link>&nbsp;
+      <Link to="/signup"><button>Signup</button></Link>&nbsp;
+      <Link to="/login"><button>Login</button></Link>&nbsp;
       <main>
         <Switch>
           {/* Signup */}
@@ -109,8 +111,41 @@ const deleteOutreach = (event) => {
               <Signup {...rp} label="signup"/>
             )}/>
 
-          {/* Login */}
-          <Route
+
+            <Route
+               exact 
+               path="/" 
+
+               render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}/>
+               
+        <Route
+        exact
+        path="/create"
+        render={(rp) => (
+
+         <AuthForm {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
+        )}
+          />
+
+      <Route
+        exact
+        path="/userHomepage"
+        render={(rp) =>
+         <UserHomePage {...rp}  outreach={outreach} handleSubmit={handleCreate}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach} />
+        }
+          />
+
+        <Route
+        exact
+        path="/edit"
+        render={(rp) => (
+          <AuthForm {...rp} label="update" outreach={selectedOutreach} handleSubmit={handleUpdate} />
+        )}
+      />       
+
+           <Route
+
+
             exact
             path='/auth/login'
             render={(rp) => (

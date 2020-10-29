@@ -15,22 +15,23 @@ console.log(`Outreach: ${props.outreach}`)
 console.log(`Get Outreach (): ${props.getOutreach}`)
 
 
+
   const loaded = () => (
-    <div style={{textAlign: "center"}}>
-      {outreach.map((event) => (
-        <article>
-          <h1>Title: {event.title}</h1>
-          <h2>Cause: {event.cause}</h2>
-          <h2>Location: {event.location}</h2>
-          <h2>Zip Code: {event.zipCode}</h2>
-          <h2>Start Date: {event.startDate}</h2>
-          <h2>End Date: {event.endDate}</h2>
-          <button onClick={() => {
+    <div className="container">
+      {outreach.map((event) => (        
+        <div className="card">
+          <h2>Title: {event.title}</h2>
+          <p>Cause: {event.cause}</p>
+          <p>Location: {event.location}</p>
+          <p>Zip Code: {event.zipCode}</p>
+          <p>Start Date: {event.startDate}</p>
+          <p>End Date: {event.endDate}</p>
+          <button  onClick={() => {
             props.selectOutreach(event)
             props.history.push('/edit')
-          }}>Edit</button>
+          }}>Edit</button> &nbsp;
           <button onClick={() => {props.deleteOutreach(event)}}>Delete</button>
-        </article>
+        </div>
       ))}
     </div>
   )
