@@ -1,3 +1,4 @@
+
 //BC: this will essentially be the same as the app homepage but only shows the user's events
 // import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
@@ -23,7 +24,9 @@ const UserHomePage = (props) => {
       ))}
     </div>
   )
+
   const loading = <h1>Loading...</h1>
   return outreach.length > 0 ? loaded() : loading
 };
 export default UserHomePage;
+
