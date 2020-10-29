@@ -5,6 +5,7 @@ import Home from "./Home";
 import AuthForm from "./auth/authEventForm";
 import UserHomePage from "./auth/userHomePage"
 import Signup from "./userSignup"
+import Login from "./userLogin"
 
 
 function App() {
@@ -87,105 +88,59 @@ const deleteOutreach = (event) => {
   });
 };
 
-
-//Signup Function
-  //similar to handle functions here
-//Login Function
-  //similar to handle functions here
-
-
-
   return (
     <div className="App">
-    
-      <Link to="/create"><button>Add Event</button></Link>&nbsp;
-      <Link to="/signup"><button>Signup</button></Link>&nbsp;
-      <Link to="/login"><button>Login</button></Link>&nbsp;
       <main>
         <Switch>
-          {/* Signup */}
+          {/* SITE LANDING PAGE */}
+          <Route
+            exact 
+            path="/" 
+            render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}/>
+
+          {/* SIGNUP */}
           <Route
             exact
             path='/signup'
             render={(rp) => (
-              <Signup {...rp} label="signup"/>
+              <Signup {...rp} label="signup" outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>
             )}/>
 
-
-            <Route
-               exact 
-               path="/" 
-
-               render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}/>
-               
-        <Route
-        exact
-        path="/create"
-        render={(rp) => (
-
-         <AuthForm {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
-        )}
-          />
-
-      <Route
-        exact
-        path="/userHomepage"
-        render={(rp) =>
-         <UserHomePage {...rp}  outreach={outreach} handleSubmit={handleCreate}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach} />
-        }
-          />
-
-        <Route
-        exact
-        path="/edit"
-        render={(rp) => (
-          <AuthForm {...rp} label="update" outreach={selectedOutreach} handleSubmit={handleUpdate} />
-        )}
-      />       
-
-           <Route
-
-
+          {/* LOGIN */}
+          <Route
             exact
-            path='/auth/login'
+            path='/login'
             render={(rp) => (
-              // user login form
-              <AuthForm {...rp} label="update" outreach={selectedOutreach} handleSubmit={handleUpdate} />
+              <Login {...rp} label="login" outreach={selectedOutreach} handleSubmit={handleUpdate} />
             )}
           />
 
-          {/* User Home Page */}
+          {/* USER HOME PAGE */}
           <Route
             exact
-            path='/userHomepage'
-            render={(rp) => (
-              <UserHomePage {...rp} outreach={outreach} handleSubmit={handleCreate} selectOutreach={selectOutreach} deleteOutreach={deleteOutreach} />
-            )}
+            path="/userHomepage"
+            render={(rp) =>
+              <UserHomePage {...rp}  outreach={outreach} handleSubmit={handleCreate}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach} />
+            }
           />
 
-          {/* Home */}
-          <Route
-              exact 
-              path="/" 
-              render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}
-          />
-               
-          {/* Create */}
+          {/* CREATE ROUTE */}
           <Route
             exact
             path="/create"
             render={(rp) => (
-            <AuthForm {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
+              <AuthForm {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
             )}
           />
 
-        <Route
-          exact
-          path="/edit"
-          render={(rp) => (
-            <AuthForm {...rp} label="update" outreach={selectedOutreach} handleSubmit={handleUpdate}/>)}
-        />
-
+          {/* EDIT ROUTE */}
+          <Route
+            exact
+            path="/edit"
+            render={(rp) => (
+              <AuthForm {...rp} label="update" outreach={selectedOutreach} handleSubmit={handleUpdate} />
+            )}
+          />       
         </Switch>
       </main>
     </div>

@@ -14,7 +14,7 @@
 
 import React from "react";
 
-const profileForm = (props) => {
+const Login = (props) => {
   //STATE FOR THE FORM
   const [formData, setFormData] = React.useState(props.profile);
 
@@ -38,9 +38,9 @@ const profileForm = (props) => {
         onChange={handleChange}
       />
       <input
-        type="Number"
-        name="zipCode"
-        value= "Enter your zipcode"
+        type="text"
+        name="password"
+        value="Create Password"
         onChange={handleChange}
       />
 
@@ -49,4 +49,4 @@ const profileForm = (props) => {
   );
 };
 
-export default profileForm;
+export default Login;
