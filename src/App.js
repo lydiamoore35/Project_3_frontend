@@ -4,6 +4,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
 import AuthForm from "./auth/authEventForm";
 import UserHomePage from "./auth/userHomePage"
+import Signup from "./userSignup"
 
 
 function App() {
@@ -139,12 +140,12 @@ const deleteOutreach = (event) => {
               <UserHomePage {...rp} label="userHomepage" />
             )}/>
 
-            <Route
+            {/* <Route
               exact
               path="/auth/eventForm"
               render={(rp) => (
                 <UserEventForm {...rp} label="userEventForm" />
-              )} />
+              )} /> */}
 
         </Switch>
       </main>
