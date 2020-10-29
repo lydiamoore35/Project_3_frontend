@@ -108,11 +108,11 @@ const deleteOutreach = (event) => {
         }
           />  
 
-          {/* <Route
+           <Route
             exact
             path="/edit"
             render={(rp) => (
-              <Form {...rp} label="update" outreach={{selectedOutreach}} handleSubmit={handleUpdate} />
+              <AuthForm {...rp} label="update" outreach={selectedOutreach} handleSubmit={handleUpdate} />
 
             )}
           />
