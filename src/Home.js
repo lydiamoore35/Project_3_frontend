@@ -5,8 +5,8 @@ const Home = (props) => {
     <header className="navbar">
       <nav>
         <span><a href="/">Home</a></span>
-        <span><a href="/login">Log In</a></span>
-        <span><a href="/signup">Sign Up</a></span>
+        <span><a href="/auth/login">Log In</a></span>
+        <span><a href="/auth/signup">Sign Up</a></span>
         {/* BC: I need to make a logout function for this. It should take the user back to the Site Landing Page */}
         <span><a href="/">Log Out</a></span>
         <span><a href="/userHomePage">Find Local Projects</a></span>
