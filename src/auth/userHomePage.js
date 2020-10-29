@@ -5,6 +5,7 @@ import { Route, Link, Switch } from "react-router-dom";
 import React from "react";
 const UserHomePage = (props) => {
   const {outreach} = props
+  console.log(`Your Props: ${props.handleSubmit}`)
   const loaded = () => (
     <div style={{textAlign: "center"}}>
       {outreach.map((event) => (
@@ -16,10 +17,10 @@ const UserHomePage = (props) => {
           <h2>Start Date: {event.startDate}</h2>
           <h2>End Date: {event.endDate}</h2>
           <button onClick={() => {
-            props.selectedOutreach(event)
+            props.selectOutreach(event)
             props.history.push('/edit')
           }}>Edit</button>
-          <button onClick={() => {props.deletedEvent(event)}}>Delete</button>
+          <button onClick={() => {props.deleteOutreach(event)}}>Delete</button>
         </article>
       ))}
     </div>
