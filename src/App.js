@@ -9,9 +9,11 @@ import Signup from "./userSignup"
 
 function App() {
 
+  const url = "http://localhost:4500";
+
   const [outreach, setOutreach] = React.useState([]);
   // Variable to hold url
-  const url = "http://localhost:4500";
+  
   //State to Hold events
   //Empty events
   const emptyOutreach = {
@@ -119,9 +121,17 @@ const deleteOutreach = (event) => {
         exact
         path="/userHomepage"
         render={(rp) =>
-         <UserHomePage {...rp}  outreach={outreach} handleSubmit={handleCreate} />
+         <UserHomePage {...rp}  outreach={outreach} handleSubmit={handleCreate}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach} />
         }
-          />  
+          />
+
+        <Route
+        exact
+        path="/edit"
+        render={(rp) => (
+          <AuthForm {...rp} label="update" outreach={selectedOutreach} handleSubmit={handleUpdate} />
+        )}
+      />       
 
            <Route
 
