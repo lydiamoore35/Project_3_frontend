@@ -8,7 +8,7 @@ const AuthEventForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent Form from Refreshing
     props.handleSubmit(formData); // Submit to Parents desired function
-    props.history.push("/userHomepage.js"); //Push back to display page
+    props.history.push("/userHomepage"); //Push back to display page
   };
 
   const handleChange = (event) => {
