@@ -15,12 +15,12 @@ function App() {
   //BC: THIS GLOBAL CONTEXT IS COMING FROM ALEX VIDEO:
   //https://www.youtube.com/watch?v=Jzdm4kOrZ0c&list=PLY6oTPmKnKbZsBHeBGNL9suAPIJdLaVk9&index=8
   const [globalState, setGlobalState] = React.useState({
-    url: "https://outreach-zen.herokuapp.com/", 
+    url: "https://outreach-zen.herokuapp.com", 
     token: null
   })
 
   // Variable to hold url
-  const url = "https://outreach-zen.herokuapp.com/";
+  const url = "https://outreach-zen.herokuapp.com";
 
   
   const [outreach, setOutreach] = React.useState([]);
