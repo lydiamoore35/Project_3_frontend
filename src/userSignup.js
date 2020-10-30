@@ -1,39 +1,43 @@
-//http://localhost:3000/signup
-
-
 import React from "react";
+import {GlobalContext} from "./App"
 
-//I think Signup needs to be capitalized otherwise it won't compile
 const Signup = (props) => {
-  //STATE FOR THE FORM
-  const [formData, setFormData] = React.useState(props);
 
-  //FUNCTIONS
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent Form from Refreshing
-    props.handleSubmit(formData); // Submit to Parents desired function
-    props.history.push("/"); //Push back to display page
-  };
+  const {globalState, setGlobalState} = React.useContext(GlobalContext)
+  const {url} = globalState
+
+
+  const blankForm = {
+    username: "",
+    password: "",
+    zipCode: ""
+  }
+
+  const [form, setForm] = React.useState(blankForm);
 
   const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+    setForm({ ...form, [event.target.name]: event.target.value });
   };
 
 
-
-                      //TESTING
-/////////////////////////////////////////////////////////////////////
-const [user, setUser] = React.useState([]);
-//Empty User
-const emptyUser = {
-  username: "",
-  password: "",
-  zipCode: 0
-};
-
-/////////////////////////////////////////////////////////////////////
-
-
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const {username, password, zipCode} = form
+    
+    fetch(`${url}/auth/signup`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({username, password})
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      setForm(blankForm)
+      props.history.push("/auth/login")
+    })
+  };
 
 
 
@@ -42,22 +46,28 @@ const emptyUser = {
       <input
         type="text"
         name="username"
-        value= "Create Username"
+        placeholder="Username"
+        value= {form.username}
         onChange={handleChange}
       />
-      <input
-        type="number"
-        name="zipCode"
-        value= "Enter your zipCode"
-        onChange={handleChange}
-      />
+
       <input
         type="text"
         name="password"
-        value="Create Password"
+        placeholder="Password"
+        value= {form.password}
+        onChange={handleChange}
+      />  
+
+      <input
+        type="text"
+        name="zipCode"
+        placeholder="Zip Code"
+        value= {form.zipCode}
         onChange={handleChange}
       />
-      <input type="submit" value={props.label} />
+
+      <input type="submit" value="signup" />
     </form>
   );
 };
