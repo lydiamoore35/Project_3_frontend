@@ -42,7 +42,23 @@ const Signup = (props) => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
+     <header className="navbar">
+      <nav>
+        <span><a href="/">Home</a></span>
+        {/* BC: Does not need auth */}
+
+        <span><a href="/userHomePage">Log In</a></span>
+
+        <span><a href="/signup">Sign Up</a></span>
+        
+        <span><a href="/auth/logout">Log Out</a></span>
+        {/* BC: Homepage: Does not need auth */}
+        <span><a href="/userHomePage">Add Event</a></span>
+        <span><a href="/userHomePage">Find Local Projects</a></span>
+      </nav>
+    </header>
+    <form className="newUser" onSubmit={handleSubmit}>
       <input
         type="text"
         name="username"
@@ -53,6 +69,7 @@ const Signup = (props) => {
 
       <input
         type="text"
+
         name="password"
         placeholder="Password"
         value= {form.password}
@@ -69,6 +86,10 @@ const Signup = (props) => {
 
       <input type="submit" value="signup" />
     </form>
+     <footer>
+     Copyright © 2020 created by Brandon Czaja, Leanne Frisinger, Lydia Moore and Oscar Icochea Calenzani.<br></br>All rights reserved.
+    </footer>
+    </>
   );
 };
 
