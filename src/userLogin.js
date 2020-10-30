@@ -46,6 +46,7 @@ const Login = (props) => {
 
   return (
     <>
+     <main className="logInMain">
       <header className="navbar">
         <nav>
           <span><a href="/">Home</a></span>
@@ -55,26 +56,29 @@ const Login = (props) => {
           <span><a href="/userHomePage">Find Local Projects</a></span>
         </nav>
       </header>
+    <form className="userLogIn" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        value= {form.username}
+        onChange={handleChange}
+      />
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value= {form.username}
-          onChange={handleChange}
-        />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        value= {form.password}
+        onChange={handleChange}
+      />  
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value= {form.password}
-          onChange={handleChange}
-        />  
-
-        <input type="submit" value="login" />
-      </form>
+      <input type="submit" value="login" />
+    </form>
+    <footer>
+     Copyright © 2020 created by Brandon Czaja, Leanne Frisinger, Lydia Moore and Oscar Icochea Calenzani.<br></br>All rights reserved.
+    </footer>
+    </main>
     </>
   );
 };

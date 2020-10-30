@@ -158,7 +158,6 @@ span a:hover {
 	margin-bottom: 2em;	
 }
 
-
 .button, button, input[type='button'], input[type='reset'], input[type='submit'] {
   background-color: #84a9c0;
   border: #84a9c0;
@@ -175,7 +174,7 @@ input[type='color'], input[type='date'], input[type='datetime'], input[type='dat
   background-color: #ecf2f5;
 }
 
-.newUser {
+.newUser, .userLogIn {
     text-align: center;
     width: 30%;
     margin: auto;
