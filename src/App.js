@@ -121,9 +121,8 @@ const deleteOutreach = (event) => {
             <Route
               exact
               path='/auth/login'
-              render={(rp) => (
-                <Login {...rp} />
-              )}
+              render={(rp) => globalState.token ? <UserHomePage {...rp}  outreach={outreach} handleSubmit={handleCreate}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach} /> :<Login {...rp}/>
+              }
             />
 
             {/* USER HOME PAGE */}
