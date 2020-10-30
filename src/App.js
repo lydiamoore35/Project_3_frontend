@@ -31,6 +31,7 @@ function App() {
     title: "",
     cause: "",
     location: "",
+    zipCode: "",
     startDate:"",
     endDate: ""
   };
@@ -140,7 +141,7 @@ const deleteOutreach = (event) => {
               exact
               path="/create"
               render={(rp) => (
-                <AuthForm {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
+                <AuthForm {...rp} label="create" outreach={emptyOutreach} handleSubmit={handleCreate} />
               )}
             />
 
