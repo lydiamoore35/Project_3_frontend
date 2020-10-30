@@ -102,7 +102,7 @@ span a:hover {
 
 /* Navbar links on mouse-over */
 .navbar a:hover {
-  background-color: #fefefe;
+  background-color: lightgrey;
 }
 
 /* Current/active navbar link */
