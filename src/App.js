@@ -28,9 +28,11 @@ function App() {
   //State to Hold events
   //Empty events
   const emptyOutreach = {
+    username: "-decode-token-to-get-user-and-set-",
     title: "",
     cause: "",
     location: "",
+    zipCode: "",
     startDate:"",
     endDate: ""
   };
@@ -140,7 +142,7 @@ const deleteOutreach = (event) => {
               exact
               path="/create"
               render={(rp) => (
-                <AuthForm {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
+                <AuthForm {...rp} label="create" outreach={emptyOutreach} handleSubmit={handleCreate} />
               )}
             />
 
