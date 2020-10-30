@@ -14,15 +14,16 @@ function App() {
 
   //BC: THIS GLOBAL CONTEXT IS COMING FROM ALEX VIDEO:
   //https://www.youtube.com/watch?v=Jzdm4kOrZ0c&list=PLY6oTPmKnKbZsBHeBGNL9suAPIJdLaVk9&index=8
-  const [globalState, setGlobalState] = React.useState({url: "http://localhost:4500", token: null})
+  const [globalState, setGlobalState] = React.useState({
+    url: "http://localhost:4500", 
+    token: null
+  })
 
-
-
-  //This might need to be lh:3000
+  // Variable to hold url
   const url = "http://localhost:4500";
 
+  
   const [outreach, setOutreach] = React.useState([]);
-  // Variable to hold url
   
   //State to Hold events
   //Empty events

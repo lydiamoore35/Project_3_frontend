@@ -19,7 +19,7 @@ const Login = (props) => {
     setForm({ ...form, [event.target.name]: event.target.value });
   };
 
-
+//Even with wrong password this sends user to userHomepage
   const handleSubmit = (event) => {
     event.preventDefault()
     const {username, password} = form
@@ -46,39 +46,35 @@ const Login = (props) => {
 
   return (
     <>
-    <header className="navbar">
-    <nav>
-      <span><a href="/">Home</a></span>
-      {/* BC: Does not need auth */}
+      <header className="navbar">
+        <nav>
+          <span><a href="/">Home</a></span>
+          <span><a href="/auth/signup">Sign Up</a></span>
+          <span><a href="/">Log Out</a></span>
+          <span><a href="/userHomePage">Add Event</a></span>
+          <span><a href="/userHomePage">Find Local Projects</a></span>
+        </nav>
+      </header>
 
-      <span><a href="/auth/signup">Sign Up</a></span>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value= {form.username}
+          onChange={handleChange}
+        />
 
-      <span><a href="/auth/logout">Log Out</a></span>
-      {/* BC: Homepage: Does not need auth */}
-      <span><a href="/userHomePage">Add Event</a></span>
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value= {form.password}
+          onChange={handleChange}
+        />  
 
-      <span><a href="/userHomePage">Find Local Projects</a></span>
-    </nav>
-  </header>
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="username"
-        placeholder="Username"
-        value= {form.username}
-        onChange={handleChange}
-      />
-
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        value= {form.password}
-        onChange={handleChange}
-      />  
-
-      <input type="submit" value="login" />
-    </form>
+        <input type="submit" value="login" />
+      </form>
     </>
   );
 };
