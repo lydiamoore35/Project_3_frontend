@@ -11,9 +11,9 @@ const Home = (props) => {
 
         <span><a href="/auth/signup">Sign Up</a></span>
 
-        <span><a href="/auth/logout">Log Out</a></span>
+        <span><a href="/">Log Out</a></span>
         {/* BC: Homepage: Does not need auth */}
-        <span><a href="/userHomePage">Add Event</a></span>
+        <span><a href="/auth/login">Add Event</a></span>
 
         <span><a href="/userHomePage">Find Local Projects</a></span>
       </nav>
