@@ -11,7 +11,8 @@ const UserHomePage = (props) => {
 
   const loaded = () => (
     <>
-          <header className="navbar">
+
+      <header className="navbar">
       <nav>
         <span><a href="/">Home</a></span>
         {/* BC: Does not need auth */}
