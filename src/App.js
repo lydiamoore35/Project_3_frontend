@@ -28,6 +28,7 @@ function App() {
   //State to Hold events
   //Empty events
   const emptyOutreach = {
+    username: "-decode-token-to-get-user-and-set-",
     title: "",
     cause: "",
     location: "",
