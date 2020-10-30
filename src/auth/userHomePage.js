@@ -3,14 +3,15 @@
 // import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import React from "react";
-const UserHomePage = (props) => {
-    const {outreach} = props
+import App from "../App";
 
+const UserHomePage = (props) => {
+  
+    const {outreach} = props
 
   const loaded = () => (
     <div className="container">
-      {outreach.map((event) => (
-        
+      {outreach.map((event) => (        
         <div className="card">
           <h2>Title: {event.title}</h2>
           <p>Cause: {event.cause}</p>
@@ -24,7 +25,6 @@ const UserHomePage = (props) => {
           }}>Edit</button> &nbsp;
           <button onClick={() => {props.deleteOutreach(event)}}>Delete</button>
         </div>
-     
       ))}
     </div>
   )

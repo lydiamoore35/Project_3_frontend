@@ -5,10 +5,20 @@ import Home from "./Home";
 import AuthForm from "./auth/authEventForm";
 import UserHomePage from "./auth/userHomePage"
 import Signup from "./userSignup"
+import Login from "./userLogin"
 
+
+export const GlobalContext = React.createContext(null)
 
 function App() {
 
+  //BC: THIS GLOBAL CONTEXT IS COMING FROM ALEX VIDEO:
+  //https://www.youtube.com/watch?v=Jzdm4kOrZ0c&list=PLY6oTPmKnKbZsBHeBGNL9suAPIJdLaVk9&index=8
+  const [globalState, setGlobalState] = React.useState({url: "http://localhost:4500", token: null})
+
+
+
+  //This might need to be lh:3000
   const url = "http://localhost:4500";
 
   const [outreach, setOutreach] = React.useState([]);
@@ -24,7 +34,7 @@ function App() {
     endDate: ""
   };
 
-  // slected event state
+  // selected event state
   const [selectedOutreach, setSelectedOutreach] = React.useState(emptyOutreach)
 
   // function to get events via API
@@ -40,7 +50,9 @@ React.useEffect(() => {
   getOutreach();
 }, []);
 
-//function to create new Event
+///////////
+//Create
+//////////
 const handleCreate = (newEvent) => {
   fetch(url + "/", {
     method: "post",
@@ -48,13 +60,15 @@ const handleCreate = (newEvent) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(newEvent),
-  }).then(() => {
+  }).then(response => {
     // don't need the response from the post but will be using the .then to update the list
     getOutreach();
   });
 };
 
-//Edit route
+/////////////
+//Edit
+////////////
 const handleUpdate = (editEvent) => {
   fetch(url + "/" + editEvent._id, {
     method: "put",
@@ -83,77 +97,64 @@ const deleteOutreach = (event) => {
   });
 };
 
-
-
-
   return (
-    <div className="App">
-    
-      <Link to="/create"><button>Add Event</button></Link>&nbsp;
-      <Link to="/signup"><button>Signup</button></Link>&nbsp;
-      <Link to="/login"><button>Login</button></Link>&nbsp;
-      <main>
-        <Switch>
-
-          <Route
-            exact
-            path='/signup'
-            render={(rp) => (
-              <Signup {...rp} label="signup"/>
-            )}/>
-
+    <GlobalContext.Provider value={{globalState, setGlobalState}}>
+      <div className="App">
+        <main>
+          <Switch>
+            {/* SITE LANDING PAGE */}
             <Route
-               exact 
-               path="/" 
+              exact 
+              path="/" 
+              render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}/>
 
-               render={(rp) => <Home {...rp} outreach={outreach}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach}/>}/>
-               
-        <Route
-        exact
-        path="/create"
-        render={(rp) => (
-
-         <AuthForm {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
-        )}
-          />
-
-      <Route
-        exact
-        path="/userHomepage"
-        render={(rp) =>
-         <UserHomePage {...rp}  outreach={outreach} handleSubmit={handleCreate}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach} />
-        }
-          />
-
-        <Route
-        exact
-        path="/edit"
-        render={(rp) => (
-          <AuthForm {...rp} label="update" outreach={selectedOutreach} handleSubmit={handleUpdate} />
-        )}
-      />       
-
-           <Route
-
-            exact
-            path='/login'
-            render={(rp) => (
-
-              <AuthForm {...rp} label="update" outreach={selectedOutreach} handleSubmit={handleUpdate} />
-
-            )}
-          />
+            {/* SIGNUP */}
             <Route
-            exact
-            path='/userHomepage'
-            render={(rp) => (
-              <UserHomePage {...rp} outreach={outreach} handleSubmit={handleCreate} />
-            )}/>
+              exact
+              path='/auth/signup'
+              render={(rp) => (
+                <Signup {...rp} />
+              )}/>
 
-            
-        </Switch>
-      </main>
-    </div>
+            {/* LOGIN */}
+            <Route
+              exact
+              path='/auth/login'
+              render={(rp) => (
+                <Login {...rp} />
+              )}
+            />
+
+            {/* USER HOME PAGE */}
+            <Route
+              exact
+              path="/userHomepage"
+              render={(rp) =>
+                <UserHomePage {...rp}  outreach={outreach} handleSubmit={handleCreate}  selectOutreach={selectOutreach} deleteOutreach={deleteOutreach} />
+              }
+            />
+
+            {/* CREATE ROUTE */}
+            <Route
+              exact
+              path="/create"
+              render={(rp) => (
+                <AuthForm {...rp} label="create" outreach={{emptyOutreach}} handleSubmit={handleCreate} />
+              )}
+            />
+
+            {/* EDIT ROUTE */}
+            <Route
+              exact
+              path="/edit"
+              render={(rp) => (
+                <AuthForm {...rp} label="update" outreach={selectedOutreach} handleSubmit={handleUpdate} />
+              )}
+            />       
+          </Switch>
+        </main>
+      </div>
+    </GlobalContext.Provider>
   );
 }
  export default App;
