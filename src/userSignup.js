@@ -43,52 +43,51 @@ const Signup = (props) => {
 
   return (
     <>
-     <header className="navbar">
-      <nav>
-        <span><a href="/">Home</a></span>
-        {/* BC: Does not need auth */}
+      <header className="navbar">
+        <nav>
+          <span><a href="/">Home</a></span>
+          {/* BC: Does not need auth */}
 
-        <span><a href="/userHomePage">Log In</a></span>
+          <span><a href="/userHomePage">Log In</a></span>
 
-        <span><a href="/signup">Sign Up</a></span>
-        
-        <span><a href="/auth/logout">Log Out</a></span>
-        {/* BC: Homepage: Does not need auth */}
-        <span><a href="/userHomePage">Add Event</a></span>
-        <span><a href="/userHomePage">Find Local Projects</a></span>
-      </nav>
-    </header>
-    <form className="newUser" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="username"
-        placeholder="Username"
-        value= {form.username}
-        onChange={handleChange}
-      />
+          <span><a href="/signup">Sign Up</a></span>
+          
+          <span><a href="/auth/logout">Log Out</a></span>
+          {/* BC: Homepage: Does not need auth */}
+          <span><a href="/userHomePage">Add Event</a></span>
+          <span><a href="/userHomePage">Find Local Projects</a></span>
+        </nav>
+      </header>
 
-      <input
-        type="password"
+      <form className="newUser" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value= {form.username}
+          onChange={handleChange}
+        />
 
-        name="password"
-        placeholder="Password"
-        value= {form.password}
-        onChange={handleChange}
-      />  
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value= {form.password}
+          onChange={handleChange}
+        />  
 
-      <input
-        type="text"
-        name="zipCode"
-        placeholder="Zip Code"
-        value= {form.zipCode}
-        onChange={handleChange}
-      />
-
-      <input type="submit" value="signup" />
-    </form>
-     <footer>
-     Copyright © 2020 created by Brandon Czaja, Leanne Frisinger, Lydia Moore and Oscar Icochea Calenzani.<br></br>All rights reserved.
-    </footer>
+        <input
+          type="text"
+          name="zipCode"
+          placeholder="Zip Code"
+          value= {form.zipCode}
+          onChange={handleChange}
+        />
+        <input type="submit" value="signup" />
+      </form>
+      <footer>
+      Copyright © 2020 created by Brandon Czaja, Leanne Frisinger, Lydia Moore and Oscar Icochea Calenzani.<br></br>All rights reserved.
+      </footer>
     </>
   );
 };

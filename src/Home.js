@@ -26,11 +26,11 @@ const Home = (props) => {
         </p>
 
         <div className="home-buttons"> 
-          <a href="#">
+          <a href="/auth/signup">
             <button className="signUp">Sign Up</button>
           </a>
 
-          <a href="/signup">
+          <a href="/auth/login">
             <button className="logIn">Log In</button>
           </a>
         </div>
