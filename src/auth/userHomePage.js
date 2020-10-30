@@ -11,7 +11,6 @@ const UserHomePage = (props) => {
 
   const loaded = () => (
     <>
-    <div className="container">
           <header className="navbar">
       <nav>
         <span><a href="/">Home</a></span>
@@ -28,6 +27,8 @@ const UserHomePage = (props) => {
         <span><a href="/userHomePage">Find Local Projects</a></span>
       </nav>
     </header>
+    <br></br>
+    <div className="container">
       {outreach.map((event) => (        
         <div className="card">
           <h2>Title: {event.title}</h2>
