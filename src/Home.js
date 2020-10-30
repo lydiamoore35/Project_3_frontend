@@ -7,9 +7,9 @@ const Home = (props) => {
         <span><a href="/">Home</a></span>
         {/* BC: Does not need auth */}
 
-        <span><a href="/userHomePage">Log In</a></span>
+        <span><a href="/auth/login">Log In</a></span>
 
-        <span><a href="/signup">Sign Up</a></span>
+        <span><a href="/auth/signup">Sign Up</a></span>
 
         <span><a href="/auth/logout">Log Out</a></span>
         {/* BC: Homepage: Does not need auth */}
