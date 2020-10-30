@@ -23,13 +23,13 @@ const Signup = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     const {username, password, zipCode} = form
-    
+    //This url must stay as is
     fetch(`${url}/auth/signup`, {
       method: "post",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({username, password})
+      body: JSON.stringify({username, password, zipCode})
     })
     .then(response => response.json())
     .then(data => {
@@ -46,14 +46,9 @@ const Signup = (props) => {
       <header className="navbar">
         <nav>
           <span><a href="/">Home</a></span>
-          {/* BC: Does not need auth */}
-
-          <span><a href="/userHomePage">Log In</a></span>
-
+          <span><a href="/auth/login">Log In</a></span>
           <span><a href="/signup">Sign Up</a></span>
-          
-          <span><a href="/auth/logout">Log Out</a></span>
-          {/* BC: Homepage: Does not need auth */}
+          <span><a href="/">Log Out</a></span>
           <span><a href="/userHomePage">Add Event</a></span>
           <span><a href="/userHomePage">Find Local Projects</a></span>
         </nav>

@@ -19,12 +19,12 @@ const Login = (props) => {
     setForm({ ...form, [event.target.name]: event.target.value });
   };
 
-
+//Even with wrong password this sends user to userHomepage
   const handleSubmit = (event) => {
     event.preventDefault()
     const {username, password} = form
     
-    //ERROR: Post lh:4500/auth/login 400 Not Found.Token undefined
+  
     fetch(`${url}/auth/login`, {
       method: "post",
       headers: {
@@ -46,21 +46,16 @@ const Login = (props) => {
 
   return (
     <>
-    <main className="logInMain">
-    <header className="navbar">
-    <nav>
-      <span><a href="/">Home</a></span>
-      {/* BC: Does not need auth */}
-
-      <span><a href="/auth/signup">Sign Up</a></span>
-
-      <span><a href="/auth/logout">Log Out</a></span>
-      {/* BC: Homepage: Does not need auth */}
-      <span><a href="/userHomePage">Add Event</a></span>
-
-      <span><a href="/userHomePage">Find Local Projects</a></span>
-    </nav>
-  </header>
+     <main className="logInMain">
+      <header className="navbar">
+        <nav>
+          <span><a href="/">Home</a></span>
+          <span><a href="/auth/signup">Sign Up</a></span>
+          <span><a href="/">Log Out</a></span>
+          <span><a href="/userHomePage">Add Event</a></span>
+          <span><a href="/userHomePage">Find Local Projects</a></span>
+        </nav>
+      </header>
     <form className="userLogIn" onSubmit={handleSubmit}>
       <input
         type="text"
