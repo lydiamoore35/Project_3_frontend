@@ -1,10 +1,35 @@
 import React from "react";
+import {Link} from "react-router-dom"
+import {GlobalContext} from "./App"
+
+
 const Home = (props) => {
+
+  const {globalState, setGlobalState} = React.useContext(GlobalContext);
+
+  const logout = (<Link to="/"><h2 onClick={() => {
+    window.localStorage.removeItem("token");
+    setGlobalState({...globalState, token: null})
+  }}>Logout</h2></Link>)
+
   return (
     <>
     <header className="navbar">
       <nav>
-        <span><a href="/">Home</a></span>
+        <Link to="/">
+          <h2>Home</h2>
+        </Link>
+        <Link to="/auth/signup">
+          <h2>Signup</h2>
+        </Link>
+        <Link to="/auth/login">
+          <h2>Login</h2>
+        </Link>
+        <Link to="/auth/login">
+          <h2>Add or Find Events</h2>
+        </Link>
+        {globalState.token ? logout : null}
+        {/* <span><a href="/">Home</a></span>
 
         <span><a href="/auth/login">Log In</a></span>
 
@@ -14,7 +39,7 @@ const Home = (props) => {
 
         <span><a href="/auth/login">Add Event</a></span>
 
-        <span><a href="/userHomePage">Find Local Projects</a></span>
+        <span><a href="/userHomePage">Find Local Projects</a></span> */}
       </nav>
     </header>
     <div className="name">
