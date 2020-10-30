@@ -24,7 +24,7 @@ const Login = (props) => {
     event.preventDefault()
     const {username, password} = form
     
-    //ERROR: Post lh:4500/auth/login 400 Not Found.Token undefined
+  
     fetch(`${url}/auth/login`, {
       method: "post",
       headers: {

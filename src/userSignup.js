@@ -29,7 +29,7 @@ const Signup = (props) => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({username, password})
+      body: JSON.stringify({username, password, zipCode})
     })
     .then(response => response.json())
     .then(data => {
