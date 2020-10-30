@@ -68,7 +68,7 @@ const Signup = (props) => {
       />
 
       <input
-        type="text"
+        type="password"
 
         name="password"
         placeholder="Password"

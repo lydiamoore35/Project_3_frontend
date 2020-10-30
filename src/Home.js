@@ -5,14 +5,13 @@ const Home = (props) => {
     <header className="navbar">
       <nav>
         <span><a href="/">Home</a></span>
-        {/* BC: Does not need auth */}
 
         <span><a href="/auth/login">Log In</a></span>
 
         <span><a href="/auth/signup">Sign Up</a></span>
 
         <span><a href="/">Log Out</a></span>
-        {/* BC: Homepage: Does not need auth */}
+
         <span><a href="/auth/login">Add Event</a></span>
 
         <span><a href="/userHomePage">Find Local Projects</a></span>
