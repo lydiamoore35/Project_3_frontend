@@ -17,16 +17,16 @@ const Home = (props) => {
     <header className="navbar">
       <nav>
         <Link to="/">
-          <h2>Home</h2>
+          <p>Home</p>
         </Link>
         <Link to="/auth/signup">
-          <h2>Signup</h2>
+          <p>Signup</p>
         </Link>
         <Link to="/auth/login">
-          <h2>Login</h2>
+          <p>Login</p>
         </Link>
         <Link to="/auth/login">
-          <h2>Add or Find Events</h2>
+          <p>Add or Find Events</p>
         </Link>
         {globalState.token ? logout : null}
         {/* <span><a href="/">Home</a></span>
