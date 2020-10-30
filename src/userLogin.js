@@ -38,7 +38,6 @@ const Login = (props) => {
       setGlobalState({...globalState, token: data.token})
       console.log(`Token: ${data.token}`)
       setForm(blankForm)
-      props.history.push("/userHomepage")
     })
   };
 
