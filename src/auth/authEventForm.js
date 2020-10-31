@@ -19,6 +19,7 @@ const AuthEventForm = (props) => {
     <>
     <header className="navbar">
     <nav>
+    <span><img src="https://i.imgur.com/SeNYDJ9.png"></img></span>
       <span><a href="/">Home</a></span>
       {/* BC: Does not need auth */}
 
@@ -29,7 +30,7 @@ const AuthEventForm = (props) => {
       <span><a href="/auth/logout">Log Out</a></span>
       {/* BC: Homepage: Does not need auth */}
       <span><a href="/userHomePage">Add Event</a></span>
-      <span><a href="/userHomePage">Find Local Projects</a></span>
+      {/* <span><a href="/userHomePage">Find Local Projects</a></span> */}
     </nav>
   </header>
     

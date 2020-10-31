@@ -48,6 +48,7 @@ const Login = (props) => {
      <main className="logInMain">
       <header className="navbar">
         <nav>
+        <span><img src="https://i.imgur.com/SeNYDJ9.png"></img></span>
           <span><a href="/">Home</a></span>
           <span><a href="/auth/signup">Sign Up</a></span>
           <span><a href="/">Log Out</a></span>
