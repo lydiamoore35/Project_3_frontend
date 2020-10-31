@@ -15,7 +15,7 @@ const Home = (props) => {
   return (
     <>
     <header className="navbar">
-      <nav>
+      <nav className="navbar2">
         <Link to="/">
           <p>Home</p>
         </Link>
