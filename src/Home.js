@@ -16,6 +16,7 @@ const Home = (props) => {
     <>
     <header className="navbar">
       <nav>
+      <span><img src="https://i.imgur.com/SeNYDJ9.png"></img></span>
         <Link to="/">
           <p>Home</p>
         </Link>
@@ -44,6 +45,7 @@ const Home = (props) => {
     </header>
     <div className="name">
       <div className="textbox">
+      
         <h1 className="heading">Ubuntu</h1>
         <h5 className="subheading">I AM BECAUSE WE ARE</h5>
         <p className="about">

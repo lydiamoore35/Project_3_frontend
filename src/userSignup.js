@@ -45,12 +45,13 @@ const Signup = (props) => {
     <>
       <header className="navbar">
         <nav>
+        <span><img src="https://i.imgur.com/SeNYDJ9.png"></img></span>
           <span><a href="/">Home</a></span>
           <span><a href="/auth/login">Log In</a></span>
           <span><a href="/signup">Sign Up</a></span>
           <span><a href="/">Log Out</a></span>
           <span><a href="/userHomePage">Add Event</a></span>
-          <span><a href="/userHomePage">Find Local Projects</a></span>
+          {/* <span><a href="/userHomePage">Find Local Projects</a></span> */}
         </nav>
       </header>
 

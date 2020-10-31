@@ -2,9 +2,14 @@
   text-align: center;
   background-color: lightgray;
 }
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+  float: left;
+}
+img.icon{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

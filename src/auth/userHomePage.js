@@ -14,6 +14,7 @@ const UserHomePage = (props) => {
 
       <header className="navbar">
       <nav>
+          <span><img src="https://i.imgur.com/SeNYDJ9.png"></img></span>
         <span><a href="/">Home</a></span>
         {/* BC: Does not need auth */}
 
@@ -25,14 +26,15 @@ const UserHomePage = (props) => {
         {/* BC: Homepage: Does not need auth */}
         <span><a href="/create">Add Event</a></span>
 
-        <span><a href="/userHomePage">Find Local Projects</a></span>
+        {/* <span><a href="/userHomePage">Find Local Projects</a></span> */}
       </nav>
     </header>
     <br></br>
+        <h1>Upcoming Community Outreach Events</h1>
     <div className="container">
       {outreach.map((event) => (        
         <div className="card">
-          <h2>Title: {event.title}</h2>
+          <h2>{event.title}</h2>
           <p>Cause: {event.cause}</p>
           <p>Location: {event.location}</p>
           <p>Zip Code: {event.zipCode}</p>
