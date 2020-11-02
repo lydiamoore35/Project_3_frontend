@@ -3,7 +3,11 @@
 ## Ubuntu
 ### I am Because we are
 
+<<<<<<< HEAD
 ### Link: https://outreach-zen.herokuapp.com/
+=======
+### Link: https://practical-jones-b55cd9.netlify.app/
+>>>>>>> origin
 
 ### Ubuntu is an application that allows users to sign up and log in to thier account to create, view, update, and/or delete community porjects in thier area.
 
@@ -25,8 +29,10 @@
 - frontend created by Lydia and Leanne
 
 ### Unsolved Problems
--
+- search for events by zipcode 
+
 
 ### Improvements for Later
 - search local projects from home page without logging in
-- 
+- have user name show when logged in
+- have events auto remove when date of event has passed
