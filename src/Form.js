@@ -1,5 +1,3 @@
-//BC: This event form will only be shown when the user is signed in 
-
 import React from "react";
 
 const Form = (props) => {
@@ -38,13 +36,6 @@ const Form = (props) => {
         type="text"
         name="location"
         value={formData.location}
-        onChange={handleChange}
-      />
-       <label>Zipcode:</label>
-      <input
-        type="number"
-        name="zipCode"
-        value={formData.zipCode}
         onChange={handleChange}
       />
       <label>Start Date:</label>
