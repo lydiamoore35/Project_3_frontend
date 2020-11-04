@@ -46,8 +46,8 @@ img.icon{
 }
 footer {
   margin-top: 10%;
-  background-color: #84A9C0;
-  color: black;
+  background-color: #004C63;
+  color: white;
   font-weight: 400;
   padding: 2% 5% 2% 5%;
 }
@@ -91,7 +91,7 @@ span a:hover {
 /* Style the navigation bar */
 .navbar {
   width: 100%;
-  background-color: #84A9C0;
+  background-color: #004C63;
   overflow: auto;
 }
 
@@ -179,8 +179,8 @@ span a:hover {
 }
 
 .button, button, input[type='button'], input[type='reset'], input[type='submit'] {
-  background-color: #84a9c0;
-  border: #84a9c0;
+  background-color: #004C63;
+  border: #004C63;
 }
 
 .eventForm {
