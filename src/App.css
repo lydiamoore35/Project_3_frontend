@@ -162,6 +162,15 @@ span a:hover {
   color: black;
   font-size: 13px;
 }
+
+.logIn:hover {
+  background-color: #004C63;
+}
+
+.signUp:hover {
+  background-color: #004C63;
+}
+
 .textbox{
   margin-top: 2.5%;
 }
