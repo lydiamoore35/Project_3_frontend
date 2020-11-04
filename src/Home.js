@@ -14,8 +14,8 @@ const Home = (props) => {
 
   return (
     <>
-    <header className="navbar">
-      <nav className="navbar2">
+    <header>
+      <nav className="navbar">
       <span><img src="https://i.imgur.com/SeNYDJ9.png"></img></span>
         <Link to="/">
           <p>Home</p>
@@ -67,7 +67,7 @@ const Home = (props) => {
     <body>
     </body>
     <footer>
-      Copyright © 2020 created by Brandon Czaja, Leanne Frisinger, Lydia Moore and Oscar Icochea Calenzani.<br></br>All rights reserved.
+      Copyright © 2020 created by Lydia Moore, Brandon Czaja, Leanne Frisinger and Oscar Icochea Calenzani.<br></br>All rights reserved.
     </footer>
     </>
 ) 

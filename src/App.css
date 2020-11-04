@@ -111,6 +111,20 @@ span a:hover {
   color: black;
 }
 
+.signUpNav a:hover {
+  background-color: lightgrey;
+  color: black;
+  margin: auto;
+  padding-bottom: 3.4%;
+}
+
+.logInNav a:hover {
+  background-color: lightgrey;
+  color: black;
+  margin: auto;
+  padding-bottom: 3.4%;
+}
+
 /* Current/active navbar link
 .active {
   background-color: #4CAF50;
