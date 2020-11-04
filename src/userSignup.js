@@ -44,7 +44,7 @@ const Signup = (props) => {
   return (
     <>
       <header className="navbar">
-        <nav>
+        <nav className="signUpNav">
         <span><img src="https://i.imgur.com/SeNYDJ9.png"></img></span>
           <span><a href="/">Home</a></span>
           <span><a href="/auth/login">Log In</a></span>
