@@ -37,7 +37,6 @@ img.icon{
     transform: rotate(360deg);
   }
 }
-
 .about {
   margin: 10% 15% 10% 15%;
   color: black;
@@ -79,6 +78,8 @@ footer {
 .navbar a:hover {
   background-color: lightgrey;
   color: black;
+  margin: auto;
+  padding-bottom: 3.4%;
 }
 .signUpNav a:hover {
   background-color: lightgrey;
@@ -92,7 +93,6 @@ footer {
   margin: auto;
   padding-bottom: 3.4%;
 }
-
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 500px) {
   .navbar a {
@@ -150,6 +150,9 @@ footer {
   width: 30%;
   margin: auto;
   margin-top: 5%;
+}
+h1 {
+  padding: 2%;
 }
 .newUser, .userLogIn {
     text-align: center;
