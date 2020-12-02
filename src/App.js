@@ -19,7 +19,7 @@ function App() {
     token: null
   })
 
-  // Variable to hold url
+  //Variable to hold url
   const url = "https://outreach-zen.herokuapp.com";
 
   
@@ -69,9 +69,9 @@ const handleCreate = (newEvent) => {
   });
 };
 
-/////////////
+///////////
 //Edit
-////////////
+//////////
 const handleUpdate = (editEvent) => {
   fetch(url + "/" + editEvent._id, {
     method: "put",
@@ -88,7 +88,9 @@ const selectOutreach = (event) => {
   setSelectedOutreach(event);
 };
 
+///////////
 //Delete
+///////////
 const deleteOutreach = (event) => {
   fetch(url + "/" + event._id, {
     method: "delete",

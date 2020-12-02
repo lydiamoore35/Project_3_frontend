@@ -2,7 +2,6 @@ import React from "react";
 import {Link} from "react-router-dom"
 import {GlobalContext} from "./App"
 
-
 const Home = (props) => {
 
   const {globalState, setGlobalState} = React.useContext(GlobalContext);
